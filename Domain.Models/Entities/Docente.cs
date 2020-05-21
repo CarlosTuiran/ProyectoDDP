@@ -9,7 +9,7 @@ namespace Domain.Models.Entities
     public class Docente : Entity<int>
     {
 
-        public int id { get; set; }
+        //public int id { get; set; }
         [Required]
         public int Cedula { get; set; }
         public string Nombres { get; set; }

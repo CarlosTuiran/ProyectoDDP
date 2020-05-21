@@ -8,7 +8,7 @@ namespace Domain.Models.Entities
 {
     public class Empresa : Entity<int>
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         [Required]
         public int Nit { get; set; }
         public string NombresRepresentante { get; set; }

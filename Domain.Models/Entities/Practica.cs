@@ -8,7 +8,7 @@ namespace Domain.Models.Entities
 {
     public class Practica : Entity<int>
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         [Required]
         public int IdEstudiante { get; set; }
         public int IdDocente { get; set; }

@@ -19,7 +19,7 @@ namespace Aplication.Test
         public void Setup()
         {
             //optionsBuilder.UseMySql(@"Server=localhost; database=cempredb;uid=acceso;pwd=acceso;");
-            var optionsInMemory = new DbContextOptionsBuilder<CempreContext>().UseInMemoryDatabase("Cempre").Options;
+            var optionsInMemory = new DbContextOptionsBuilder<CempreContext>().UseInMemoryDatabase("CempreE").Options;
             _context = new CempreContext(optionsInMemory);
             _unitOfWork = new UnitOfWork(_context);
         }
@@ -148,7 +148,7 @@ namespace Aplication.Test
             yield return new TestCaseData(
                 new CrearEstudianteRequest
                 {
-                    DocIdentidad = 2001,
+                    DocIdentidad = 923001,
                     
                     Nombres = "Carlos A",
                     Apellidos = "Tuiran M",
@@ -164,7 +164,7 @@ namespace Aplication.Test
             yield return new TestCaseData(
                 new CrearEstudianteRequest
                 {
-                    DocIdentidad = 2001,
+                    DocIdentidad = 234501,
                     Email = "c@gmail.com",
                     
                     Apellidos = "Tuiran M",
@@ -180,7 +180,7 @@ namespace Aplication.Test
             yield return new TestCaseData(
                 new CrearEstudianteRequest
                 {
-                    DocIdentidad = 2001,
+                    DocIdentidad = 234341,
                     Email = "c@gmail.com",
                     Nombres = "Carlos A",
                     
@@ -196,7 +196,7 @@ namespace Aplication.Test
             yield return new TestCaseData(
                 new CrearEstudianteRequest
                 {
-                    DocIdentidad = 2001,
+                    DocIdentidad = 24441,
                     Email = "c@gmail.com",
                     Nombres = "Carlos A",
                     Apellidos = "Tuiran M",
@@ -212,7 +212,7 @@ namespace Aplication.Test
             yield return new TestCaseData(
                 new CrearEstudianteRequest
                 {
-                    DocIdentidad = 2001,
+                    DocIdentidad = 43301,
                     Email = "c@gmail.com",
                     Nombres = "Carlos A",
                     Apellidos = "Tuiran M",
@@ -228,7 +228,7 @@ namespace Aplication.Test
             yield return new TestCaseData(
                 new CrearEstudianteRequest
                 {
-                    DocIdentidad = 2001,
+                    DocIdentidad = 7801,
                     Email = "c@gmail.com",
                     Nombres = "Carlos A",
                     Apellidos = "Tuiran M",
@@ -244,7 +244,7 @@ namespace Aplication.Test
             yield return new TestCaseData(
                 new CrearEstudianteRequest
                 {
-                    DocIdentidad = 2001,
+                    DocIdentidad = 34001,
                     Email = "c@gmail.com",
                     Nombres = "Carlos A",
                     Apellidos = "Tuiran M",

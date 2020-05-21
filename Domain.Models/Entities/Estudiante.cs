@@ -8,7 +8,7 @@ namespace Domain.Models.Entities
 {
     public class Estudiante : Entity<int>
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         public int Telefono { get; set; }
         [Required]
         public int DocIdentidad { get; set; }
@@ -47,10 +47,15 @@ namespace Domain.Models.Entities
         public IReadOnlyList<string> CanCrear(Estudiante estudiante)
         {
             var errors = new List<string>();
-            if(!estudiante.Carrera.Equals("Administracion de Empresas") && !estudiante.Carrera.Equals("Contaduria Publica") &&
-                !estudiante.Carrera.Equals("Economia") && !estudiante.Carrera.Equals("Comercio Internacional"))
+            if (string.IsNullOrEmpty(this.Carrera))
             {
                 errors.Add("Carrera Invalida");
+            }
+            else
+            {
+                if (!estudiante.Carrera.Equals("Administracion de Empresas") && !estudiante.Carrera.Equals("Contaduria Publica") &&
+                    !estudiante.Carrera.Equals("Economia") && !estudiante.Carrera.Equals("Comercio Internacional"))            
+                    errors.Add("Carrera Invalida");
             }
             if (string.IsNullOrEmpty(this.Nombres))
                 errors.Add("Campo Nombres vacio");
@@ -66,6 +71,8 @@ namespace Domain.Models.Entities
                 errors.Add("Campo Departamento vacio");
             if (string.IsNullOrEmpty(this.Direccion))
                 errors.Add("Campo Direccion vacio");
+            if (this.Celular==0)
+                errors.Add("Campo Celular vacio");
             return errors;
         }
 

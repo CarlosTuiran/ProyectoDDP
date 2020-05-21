@@ -19,7 +19,8 @@ namespace Aplication.Services
 
         public CrearEstudianteResponse Ejecutar(CrearEstudianteRequest request)
         {
-            var estudiante = _unitOfWork.EstudianteServiceRepository.FindFirstOrDefault(t => t.DocIdentidad == request.DocIdentidad);
+                      
+         var estudiante = _unitOfWork.EstudianteServiceRepository.FindFirstOrDefault(t => t.DocIdentidad == request.DocIdentidad);
             if (estudiante == null)
             {
                 Estudiante newEstudiante = new Estudiante(request.DocIdentidad, request.Email, request.Nombres, request.Apellidos, request.Carrera,

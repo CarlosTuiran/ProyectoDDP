@@ -9,7 +9,7 @@ namespace Domain.Models.Entities
 {
     public class Solicitud : Entity<int>, ISolicitud
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         [Required]
         public string Tipo { get; set; } 
         public DateTime Fecha { get; set; }

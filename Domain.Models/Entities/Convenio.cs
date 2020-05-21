@@ -8,7 +8,7 @@ namespace Domain.Models.Entities
 {
     public class Convenio: Entity<int>
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         [Required]
         public DateTime Fecha { get; set; }
         public int ID_Empresa { get; set; }
