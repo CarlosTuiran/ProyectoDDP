@@ -1,0 +1,27 @@
+<h1>Docentes</h1>
+<button [routerLink]='["/docentes-crear"]' class="btn btn-primary">Agregar Docente</button>
+<p *ngIf="!(docentes && docentes.length)"> No Existen Docentes Registrados</p>
+
+<table class="table" *ngIf="(docentes && docentes.length)">
+  <thead>
+    <tr>
+      <th>Cedula</th>
+      <th>Email</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let docente of docentes">
+      <td>{{docente.cedula}}</td>
+      <td>{{docente.email}}</td>
+      <td>{{docente.nombres}}</td>
+      <td>{{docente.apellidos}}</td>
+      <td>{{docente.estado}}</td>
+
+    </tr>
+  </tbody>
+
+</table>
+

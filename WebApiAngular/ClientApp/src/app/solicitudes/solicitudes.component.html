@@ -1,0 +1,29 @@
+<h1>Solicitudes</h1>
+
+<p *ngIf="!(solicitudes && solicitudes.length)"> No Existen Solicitudes Registradas</p>
+
+<table class="table" *ngIf="(solicitudes && solicitudes.length)">
+  <thead>
+    <tr>
+
+      <th>Tipo</th>
+      <th>Fecha</th>
+      <th>ID_Solicitante</th>
+      <th>TipoSolicitante</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let solicitud of solicitudes">
+      <td>{{solicitud.tipo}}</td>
+      <td>{{solicitud.fecha | date}}</td>
+      <td>{{solicitud.iD_Solicitante}}</td>
+      <td>{{solicitud.tipoSolicitante}}</td>
+      <td>{{solicitud.estado}}</td>      
+
+    </tr>
+  </tbody>
+
+</table>
+
+

@@ -1,0 +1,24 @@
+<h1>Administradores</h1>
+<button [routerLink]='["/admins-crear"]' class="btn btn-primary">Agregar Admin</button>
+<p *ngIf="!(admins && admins.length)"> No Existen Administradores Registrados</p>
+
+<table class="table" *ngIf="(admins && admins.length)">
+  <thead>
+    <tr>
+      <th>Cedula</th>
+      <th>Email</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let admin of admins">
+      <td>{{admin.cedula}}</td>
+      <td>{{admin.email}}</td>
+      <td>{{admin.nombres}}</td>
+      <td>{{admin.apellidos}}</td>
+
+    </tr>
+  </tbody> 
+  
+</table>

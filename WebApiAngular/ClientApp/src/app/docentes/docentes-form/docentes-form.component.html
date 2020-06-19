@@ -1,0 +1,136 @@
+<h1>Agregar Docente</h1>
+<form class="form-horizontal" novalidate
+      (ngSubmit)="save()" [formGroup]="formGroup">
+  <fieldset>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('email').touched || formGroup.get('email').dirty) && !formGroup.get('email').valid }">
+      <label class="col-md-2 control-label"
+             for="emailId">Email</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="emailId"
+               type="text"
+               required
+               formControlName="email" />
+        <span class="help-block" *ngIf="(formGroup.get('email').touched || formGroup.get('email').dirty) && formGroup.get('email').errors">
+          <span *ngIf="formGroup.get('email').errors.required">
+            El campo email es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('nombres').touched || formGroup.get('nombres').dirty) && !formGroup.get('nombres').valid }">
+      <label class="col-md-2 control-label"
+             for="nombreId">Nombres</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="nombreId"
+               type="text"
+               required
+               formControlName="nombres" />
+        <span class="help-block" *ngIf="(formGroup.get('nombres').touched || formGroup.get('nombres').dirty) && formGroup.get('nombres').errors">
+          <span *ngIf="formGroup.get('nombres').errors.required">
+            El campo nombres es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('apellidos').touched || formGroup.get('apellidos').dirty) && !formGroup.get('apellidos').valid }">
+      <label class="col-md-2 control-label"
+             for="apellidosId">Apellidos</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="apellidosId"
+               type="text"
+               required
+               formControlName="apellidos" />
+        <span class="help-block" *ngIf="(formGroup.get('apellidos').touched || formGroup.get('apellidos').dirty) && formGroup.get('apellidos').errors">
+          <span *ngIf="formGroup.get('apellidos').errors.required">
+            El campo apellidos es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('fechaNacimiento').touched || formGroup.get('fechaNacimiento').dirty) && !formGroup.get('fechaNacimiento').valid }">
+      <label class="col-md-2 control-label"
+             for="fechaNacimiento">Fecha Nacimiento</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="fechaNacimiento"
+               type="date"
+               required
+               formControlName="fechaNacimiento" />
+        <span class="help-block" *ngIf="(formGroup.get('fechaNacimiento').touched || formGroup.get('fechaNacimiento').dirty) && formGroup.get('fechaNacimiento').errors">
+          <span *ngIf="formGroup.get('fechaNacimiento').errors.required">
+            El campo Fecha Nacimiento es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <a class="btn btn-primary" (click)="agregarDireccion()">Agregar Dirección</a>
+    </div>
+
+    <div formArrayName="direcciones"
+         *ngFor="let direccion of formGroup.get('direcciones').controls; let i = index;">
+      <div [formGroupName]="i">
+        <div class="form-group">
+          <label class="col-md-2 control-label" [attr.for]="'calle' + i">
+            Calle
+          </label>
+          <div class="col-md-8">
+            <input class="form-control" [attr.id]="'calle' + i" type="text" formControlName="calle" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-2 control-label" [attr.for]="'provincia' + i">
+            Provincia
+          </label>
+          <div class="col-md-8">
+            <input class="form-control" [attr.id]="'provincia' + i" type="text" formControlName="provincia" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-10">
+            <button type="button" class="btn btn-danger pull-right" (click)="removerDireccion(i)">Remover</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <span>
+          <button class="btn btn-primary"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Salvar
+          </button>
+          <button class="btn"
+                  type="button"
+                  [routerLink]='["/admins"]'>
+            Cancelar
+          </button>
+        </span>
+
+      </div>
+
+    </div>
+  </fieldset>
+</form>
+
+
+

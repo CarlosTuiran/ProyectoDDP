@@ -8,7 +8,9 @@ namespace Domain.Models.Entities
 {
     public class Admin: Entity<int>
     {
-        //public int id { get; set; }
+        [Key]
+        [Required]
+        public int id { get; set; }
         [Required]
         public int Cedula { get; set; }
         public string Email { get; set; }

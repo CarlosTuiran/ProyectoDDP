@@ -14,5 +14,10 @@ namespace Aplication.Request
     public class CrearAdminResponse
     {
         public string Message { get; set; }
+
+        public bool isOk()
+        {
+            return this.Message.Equals("Admin Creado Exitosamente");            
+        }
     }
 }

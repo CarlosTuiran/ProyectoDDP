@@ -1,0 +1,39 @@
+<h1>Practicas</h1>
+
+<p *ngIf="!(practicas && practicas.length)"> No Existen Practicas Registradas</p>
+
+<table class="table" *ngIf="(practicas && practicas.length)">
+  <thead>
+    <tr>
+      
+      <th>IdEstudiante</th>
+      <th>IdEmpresa</th>
+      <th>IdDocente</th>
+      <th>Descripcion</th>
+      <th>Estado</th>
+      <th>PrimerCorte</th>
+      <th>SegundoCorte</th>
+      <th>TercerCorte</th>
+      <th>Definitiva</th>
+      <th>Observacion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let practica of practicas">
+      <td>{{practica.idEstudiante}}</td>
+      <td>{{practica.idEmpresa}}</td>
+      <td>{{practica.idDocente}}</td>
+      <td>{{practica.descripcion}}</td>
+      <td>{{practica.estado}}</td>
+      <td>{{practica.primerCorte}}</td>
+      <td>{{practica.segundoCorte}}</td>
+      <td>{{practica.tercerCorte}}</td>
+      <td>{{practica.observacion}}</td>
+      
+
+
+    </tr>
+  </tbody>
+
+</table>
+

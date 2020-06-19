@@ -16,5 +16,9 @@ namespace Aplication.Request
     public class CrearSolicitudResponse
     {
         public string Message { get; set; }
+        public bool isOk()
+        {
+            return this.Message.Equals("Solicitud Creada Exitosamente");
+        }
     }
 }

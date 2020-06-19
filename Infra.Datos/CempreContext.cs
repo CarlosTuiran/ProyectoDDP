@@ -14,9 +14,10 @@ namespace Infra.Datos
         {
         }
         
+
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(@"Server=localhost; database=cempredb;uid=acceso;pwd=acceso;");
+            optionsBuilder.UseMySql(@"Server=localhost; database=cempreddp;uid=acceso;pwd=acceso;");
         }*/
         public DbSet<Admin> Admin{get; set;}
         public DbSet<Docente> Docente{get; set;}

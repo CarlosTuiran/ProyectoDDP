@@ -21,5 +21,9 @@ namespace Aplication.Request
     public class CrearEstudianteResponse
     {
         public string Message { get; set; }
+        public bool isOk()
+        {
+            return this.Message.Equals("Estudiante Creado Exitosamente");
+        }
     }
 }

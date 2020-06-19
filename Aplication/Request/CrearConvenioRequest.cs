@@ -14,5 +14,9 @@ namespace Aplication.Request
     public class CrearConvenioResponse
     {
         public string Message { get; set; }
+        public bool isOk()
+        {
+            return this.Message.Equals("Convenio Creado Exitosamente");
+        }
     }
 }

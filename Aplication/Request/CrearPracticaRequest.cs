@@ -20,5 +20,9 @@ namespace Aplication.Request
     public class CrearPracticaResponse
     {
         public string Message { get; set; }
+        public bool isOk()
+        {
+            return this.Message.Equals("Practica Creada Exitosamente");
+        }
     }
 }

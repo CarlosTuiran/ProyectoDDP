@@ -1,0 +1,27 @@
+<h1>Empresas</h1>
+<button [routerLink]='["/empresas-crear"]' class="btn btn-primary">Agregar Empresa</button>
+<p *ngIf="!(empresas && empresas.length)"> No Existen Empresas Registrados</p>
+
+<table class="table" *ngIf="(empresas && empresas.length)">
+  <thead>
+    <tr>
+      <th>Nit</th>
+      <th>NombresRepresentante</th>
+      <th>ApellidosRepresentante</th>
+      <th>Email</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empresa of empresas">
+      <td>{{empresas.nit}}</td>
+      <td>{{empresas.nombresRepresentante}}</td>
+      <td>{{empresas.apellidosRepresentante}}</td>
+      <td>{{empresas.email}}</td>
+      <td>{{empresas.estado}}</td>
+
+    </tr>
+  </tbody>
+
+</table>
+

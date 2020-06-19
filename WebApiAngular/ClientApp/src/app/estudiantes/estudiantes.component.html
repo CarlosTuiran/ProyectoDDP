@@ -1,0 +1,38 @@
+<h1>Estudiantes</h1>
+<button [routerLink]='["/estudiantes-crear"]' class="btn btn-primary">Agregar Estudiante</button>
+<p *ngIf="!(estudiantes && estudiantes.length)"> No Existen Estudiantes Registrados</p>
+
+<table class="table" *ngIf="(estudiantes && estudiantes.length)">
+  <thead>
+    <tr>
+      <th>DocIdentidad</th>
+      <th>Email</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Carrera</th>
+      <th>Celular</th>
+      <th>Direccion</th>
+      <th>Departamento</th>
+      <th>Ciudad</th>
+      <th>Telefono</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let estudiante of estudiantes">
+      <td>{{estudiante.docIdentidad}}</td>
+      <td>{{estudiante.email}}</td>
+      <td>{{estudiante.nombres}}</td>
+      <td>{{estudiante.apellidos}}</td>
+      <td>{{estudiante.carrera}}</td>
+      <td>{{estudiante.celular}}</td>
+      <td>{{estudiante.direccion}}</td>
+      <td>{{estudiante.departamento}}</td>
+      <td>{{estudiante.ciudad}}</td>
+      <td>{{estudiante.telefono}}</td>  
+
+
+    </tr>
+  </tbody>
+
+</table>

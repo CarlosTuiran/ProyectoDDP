@@ -16,5 +16,9 @@ namespace Aplication.Request
     public class CrearEmpresaResponse
     {
         public string Message { get; set; }
+        public bool isOk()
+        {
+            return this.Message.Equals("Empresa Creada Exitosamente");
+        }
     }
 }

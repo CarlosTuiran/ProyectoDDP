@@ -1,0 +1,24 @@
+<h1>Convenios</h1>
+<p *ngIf="!(convenios && convenios.length)"> No Existen Convenios Registrados</p>
+
+<table class="table" *ngIf="(convenios && convenios.length)">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>ID_Empresa</th>
+      <th>Estado</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let convenio of convenios">
+      <td>{{convenio.fecha | date}}</td>
+      <td>{{convenio.iD_Empresa}}</td>
+      <td>{{convenio.estado}}</td>
+      
+
+    </tr>
+  </tbody>
+
+</table>
+
